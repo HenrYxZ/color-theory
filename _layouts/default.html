@@ -8,17 +8,16 @@
       var canvas = document.getElementById('canvas');
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
-        const rectW = 200;
-        const rectH = 300;
-        const smallSquareSide = 24;
-        const monochromaticA = '#FF2631'; // R 100 V
-        const monochromaticB = '#99161F'; // R 60 V
-        const monochromaticAB = '#CC1E2D'; // R 80 V
+        const scale = 2;
+        const rectW = 200 * scale;
+        const rectH = 300 * scale;
+        const smallSquareSide = 24 * scale;
+        const compareSquareSide = 15 * scale;
 
-        const colorA = monochromaticA;
-        const colorB = monochromaticB;
-        const colorC = monochromaticAB;
-        const colorD = monochromaticAB;
+        const colorA = '{{ page.colorA }}';
+        const colorB = '{{ page.colorB }}';
+        const colorC = '{{ page.colorC }}';
+        const colorD = '{{ page.colorD }}';
 
         ctx.fillStyle = colorA;
         ctx.fillRect(0,0, rectW, rectH);
@@ -29,7 +28,7 @@
         let midX = rectW / 2;
         let smallSquareOriginX = midX - smallSquareSide / 2;
         let midY = rectH / 2;
-         let smallSquareOriginY = midY - smallSquareSide / 2;
+        let smallSquareOriginY = midY - smallSquareSide / 2;
 
         ctx.fillStyle = colorC;
         ctx.fillRect(
@@ -47,20 +46,31 @@
           smallSquareSide
         );
 
+        if (colorC != colorD) {
+          let compareOriginX = rectW;
+          let compareOriginY = rectH;
 
+          ctx.fillStyle = colorC;
+          ctx.fillRect(
+            compareOriginX - compareSquareSide,
+            compareOriginY - compareSquareSide,
+            compareSquareSide,
+            compareSquareSide
+          );
+
+          ctx.fillStyle = colorD;
+          ctx.fillRect(
+            compareOriginX,
+            compareOriginY - compareSquareSide,
+            compareSquareSide,
+            compareSquareSide
+          );
+        }
       }
     }
   </script>
  </head>
  <body onload="draw();">
-   <div>
-     <canvas id="canvas" width="400" height="300"></canvas>
-   </div>
-   <div>
-     <a href="/monochromatic.html">Monochromatic</a>
-     <a href="/2hues.html">2 Hues</a>
-     <a href="/3hues.html">3 Hues</a>
-     <a href="/4hues.html">4 Hues</a>
-   </div>
+   {{ content }}
  </body>
 </html>
