@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<h1 class="text-primary">Albers Simultaneous Color Contrast</h1>
+<div>
+  <canvas id="canvas" width="800" height="600"></canvas>
+</div>
+<div>
+  <a href="{% link monochromatic/index.html %}">Monochromatic</a>
+  <a href="{% link 2hues/index.html %}">2 Hues</a>
+  <a href="{% link 3hues/index.html %}">3 Hues</a>
+  <a href="{% link 4colors/index.html %}">4 Colors</a>
+</div>
+<input type="hidden" id="colorA" value="{{ page.colorA }}">
+<input type="hidden" id="colorB" value="{{ page.colorB }}">
+<input type="hidden" id="colorC" value="{{ page.colorC }}">
+<input type="hidden" id="colorD" value="{{ page.colorD }}">
+
+<footer class="mt-3">
+  Made by Jesús Henríquez
+</footer>

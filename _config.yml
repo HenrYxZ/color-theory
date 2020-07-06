@@ -1,0 +1,7 @@
+# Google Analytics
+# -----------------------------------------------------------------------------
+# IMPORTANT! If you are copying this website DO NOT use this value of google_analytics
+# that would make the hits of your page go to my analytics account
+# change this to your tracking ID or if you don't have remove
+# the include analytics.html code in the head element and this google_analytics line
+google_analytics: UA-148898559-2
