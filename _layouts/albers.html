@@ -1,21 +1,77 @@
----
-layout: default
----
-<h1 class="text-primary">Albers Simultaneous Color Contrast</h1>
-<div>
-  <canvas id="canvas" width="800" height="600"></canvas>
-</div>
-<div>
-  <a href="{% link monochromatic/index.html %}">Monochromatic</a>
-  <a href="{% link 2hues/index.html %}">2 Hues</a>
-  <a href="{% link 3hues/index.html %}">3 Hues</a>
-  <a href="{% link 4colors/index.html %}">4 Colors</a>
-</div>
-<input type="hidden" id="colorA" value="{{ page.colorA }}">
-<input type="hidden" id="colorB" value="{{ page.colorB }}">
-<input type="hidden" id="colorC" value="{{ page.colorC }}">
-<input type="hidden" id="colorD" value="{{ page.colorD }}">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<footer class="mt-3">
-  Made by Jesús Henríquez
-</footer>
+    <title>{{ page.title }}</title>
+
+    <script src="../assets/js/albers.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <!-- Code for adding Google Analytics, if you don't have it remove this lines -->
+    {% if site.google_analytics and jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-primary"> Color Theory </h1>
+      <h2 class="text-secondary">Albers Simultaneous Color Contrast</h2>
+      <div class="row">
+        <div class="col-10 px-1" id="canvas-container">
+          <canvas id="canvas"></canvas>
+        </div>
+        <div class="col-2">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a href="../monochromatic">Monochromatic</a>
+            </li>
+            <li class="list-group-item">
+              <a href="../2hues">2 Hues</a>
+            </li>
+            <li class="list-group-item">
+              <a href="../3hues">3 Hues</a>
+            </li>
+            <li class="list-group-item">
+              <a href="../4colors">4 Colors</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-12-sm col-8-md">
+          <canvas id="canvas" width="100%"></canvas>
+        </div>
+        <div class="col-12-sm col-4-md">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a href="../monochromatic">Monochromatic</a>
+            </li>
+            <li class="list-group-item">
+              <a href="../2hues">2 Hues</a>
+            </li>
+            <li class="list-group-item">
+              <a href="../3hues">3 Hues</a>
+            </li>
+            <li class="list-group-item">
+              <a href="../4colors">4 Colors</a>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+
+      <input type="hidden" id="colorA" value="{{ page.colorA }}">
+      <input type="hidden" id="colorB" value="{{ page.colorB }}">
+      <input type="hidden" id="colorC" value="{{ page.colorC }}">
+      <input type="hidden" id="colorD" value="{{ page.colorD }}">
+
+      <footer class="mt-3">
+        Made by Jesús Henríquez
+      </footer>
+
+    </div>
+  </body>
+</html>

@@ -2,11 +2,27 @@ function draw() {
   var canvas = document.getElementById('canvas');
   if (canvas.getContext) {
     var ctx = canvas.getContext('2d');
-    const scale = 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // let scaleMap = new Map();
+    // scaleMap.set(360, 0.8);
+    // scaleMap.set(740, 1.5);
+    // let scale = 0.8;
+    // for (let [width, changedScale] of scaleMap.entries()) {
+    //   if (window.innerWidth <= width) {
+    //     scale = changedScale;
+    //     break;
+    //   }
+    // }
+    const maxWidth = document.getElementById('canvas-container').offsetWidth
+    const MAX_HORIZONTAL_SIZE = 400
+    scale = maxWidth / MAX_HORIZONTAL_SIZE;
+
     const rectW = 200 * scale;
     const rectH = 300 * scale;
     const smallSquareSide = 24 * scale;
     const compareSquareSide = 15 * scale;
+    canvas.width = rectW * 2;
+    canvas.height = rectH;
 
     const colorA = document.getElementById('colorA').value;
     const colorB = document.getElementById('colorB').value;
@@ -66,3 +82,4 @@ function draw() {
 }
 
 window.addEventListener('load', draw);
+window.addEventListener('resize', draw);
