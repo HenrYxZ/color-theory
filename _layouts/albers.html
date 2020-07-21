@@ -17,13 +17,13 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-primary"> Color Theory </h1>
+      <h1 class="text-primary">Color Theory</h1>
       <h2 class="text-secondary">Albers Simultaneous Color Contrast</h2>
       <div class="row">
-        <div class="col-10 px-1" id="canvas-container">
+        <div class="col-lg-10 px-1" id="canvas-container">
           <canvas id="canvas"></canvas>
         </div>
-        <div class="col-2">
+        <div class="col-lg-2">
           <ul class="list-group">
             <li class="list-group-item">
               <a href="../monochromatic">Monochromatic</a>
@@ -41,27 +41,7 @@
         </div>
       </div>
 
-      <!-- <div class="row">
-        <div class="col-12-sm col-8-md">
-          <canvas id="canvas" width="100%"></canvas>
-        </div>
-        <div class="col-12-sm col-4-md">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <a href="../monochromatic">Monochromatic</a>
-            </li>
-            <li class="list-group-item">
-              <a href="../2hues">2 Hues</a>
-            </li>
-            <li class="list-group-item">
-              <a href="../3hues">3 Hues</a>
-            </li>
-            <li class="list-group-item">
-              <a href="../4colors">4 Colors</a>
-            </li>
-          </ul>
-        </div>
-      </div> -->
+      <p class="lead font-italic">{{ content }}</p>
 
       <input type="hidden" id="colorA" value="{{ page.colorA }}">
       <input type="hidden" id="colorB" value="{{ page.colorB }}">
