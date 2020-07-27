@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-primary"><a href="{% link index.html %}">Color Theory</a></h1>
+      <h1 class="text-primary">Color Theory</h1>
       <h2 class="text-secondary">Albers Simultaneous Color Contrast</h2>
       <div class="row">
         <div class="col-lg-10 px-1" id="canvas-container">
@@ -25,16 +25,16 @@
           <p class="lead font-italic">{{ content }}</p>
         </div>
         <div class="col-lg-2 list-group pl-2">
-          <a href="{% link monochromatic/index.html %}" class="list-group-item list-group-item-action {% if page.url contains 'monochromatic'%}active{%endif%}">
+          <a href="../monochromatic" class="list-group-item list-group-item-action {% if page.url contains 'monochromatic'%}active{%endif%}">
             Monochromatic
           </a>
-          <a href="{% link 2hues/index.html %}" class="list-group-item list-group-item-action {% if page.url contains '2hues'%}active{%endif%}">
+          <a href="../2hues" class="list-group-item list-group-item-action {% if page.url contains '2hues'%}active{%endif%}">
             2 Hues
           </a>
-          <a href="{% link 3hues/index.html %}" class="list-group-item list-group-item-action {% if page.url contains '3hues'%}active{%endif%}">
+          <a href="../3hues" class="list-group-item list-group-item-action {% if page.url contains '3hues'%}active{%endif%}">
             3 Hues
           </a>
-          <a href="{% link 4colors/index.html %}" class="list-group-item list-group-item-action {% if page.url contains '4colors'%}active{%endif%}">
+          <a href="../4colors" class="list-group-item list-group-item-action {% if page.url contains '4colors'%}active{%endif%}">
             4 Colors
           </a>
         </div>

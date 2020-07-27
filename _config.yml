@@ -5,4 +5,3 @@
 # change this to your tracking ID or if you don't have remove
 # the include analytics.html code in the head element and this google_analytics line
 google_analytics: UA-148898559-2
-baseurl: /color-theory
