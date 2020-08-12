@@ -20,11 +20,11 @@
       <h1 class="text-primary">Color Theory</h1>
       <h2 class="text-secondary">Albers Simultaneous Color Contrast</h2>
       <div class="row">
-        <div class="col-lg-10 px-1" id="canvas-container">
+        <div class="col-lg-10" id="canvas-container">
           <canvas id="canvas"></canvas>
           <p class="lead font-italic">{{ content }}</p>
         </div>
-        <div class="col-lg-2 list-group pl-2">
+        <div class="col-lg-2 list-group pl-lg-0 pl-3">
           <a href="../monochromatic" class="list-group-item list-group-item-action {% if page.url contains 'monochromatic'%}active{%endif%}">
             Monochromatic
           </a>
@@ -40,7 +40,7 @@
         </div>
       </div>
 
-
+      <a href=".." class="mt-1">Go Back</a>
 
       <input type="hidden" id="colorA" value="{{ page.colorA }}">
       <input type="hidden" id="colorB" value="{{ page.colorB }}">

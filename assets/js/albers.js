@@ -13,9 +13,12 @@ function draw() {
     //     break;
     //   }
     // }
-    const maxWidth = document.getElementById('canvas-container').offsetWidth
-    const MAX_HORIZONTAL_SIZE = 400
-    scale = maxWidth / MAX_HORIZONTAL_SIZE;
+    let canvasContainer = document.getElementById('canvas-container');
+    let computedStyle = window.getComputedStyle(canvasContainer);
+    let padding = computedStyle.getPropertyValue('padding-left');
+    let maxWidth = canvasContainer.clientWidth - (2 * parseInt(padding));
+    const MAX_HORIZONTAL_ABSTRACT_SIZE = 400;
+    let scale = maxWidth / MAX_HORIZONTAL_ABSTRACT_SIZE;
 
     const rectW = 200 * scale;
     const rectH = 300 * scale;
